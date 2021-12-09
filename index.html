@@ -1,17 +1,50 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src='java.js'></script>
+    <script src="./todo.js"></script>
+    <link rel="stylesheet" href="./todo.css">
+    <title>Dummy To Do</title>
 </head>
 <body>
-    <button onclick="fetchTodos()">Fetch Todos</button>
-    <button onclick="logTodos()">Log Todos</button>
-    <button onclick="populateTodos()">Populate Todos</button>
+    <div class="container">
+        <h2>First Part of the Exercise</h2>
+        <p>Three buttons that call functions to:<br>1) Perform the fetch<br>2) Log the results to the console<br>3) Populate an ordered list with the 
+            fetch results</p>
+        <p>NOTE: Fetch and Log before testing the Second and Third parts of the exercise.</p>
+        <button onclick="fetchTodos()">Fetch Todos</button>
+        <button onclick="logTodos()">Log Todos</button>
+        <button onclick="populateTodos()">Populate Todos</button>
+        <hr>
+
+        <h2>Second Part of the Exercise</h2>
+        <p>1) Form to input a number between 1 and 10<br>2) Button to call function to filter ToDos for that UserID and populate ordered list 
+            with the results<br>3) Button to clear the list from the HTML page.</p>
+        <!-- New -->
+        <!-- To capture any input types, you have to have a form -->
+        <form>
+            <!-- Search for 'html input type restrict values' found these -->
+            <!-- https://www.w3schools.com/tags/att_input_min.asp -->
+            <!-- https://stackoverflow.com/questions/25825843/restrict-user-to-put-value-in-range-in-html-input-type-number -->
+            <label for="number_input">Enter a number between 1 and 10</label>
+            <input type="number" id="number_input" min="1" max="10">
+            
+            <button onclick="filterTodos()" type="button" name="button">Filter Todos By User ID</button>
+            <button onclick="resetToDos()" type="button" name="button">Clear</button>
+        </form>
+        <hr>
+
+        <h2>Third Part of the Exercise</h2>
+        <p>1) Button to call function to filter completed ToDos<br>2) Button to call function to filter <strong>not</strong> completed ToDos</p>
+        <button onclick="completedTodos()">Completed Todos</button>
+        <button onclick="notCompletedTodos()">Not Completed Todos</button>
+        <!-- End New -->
+
+
     <ol id="todo-list">
-    
+    <!-- LIs will go here -->
     </ol>
+</div>
 </body>
 </html>
